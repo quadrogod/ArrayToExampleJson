@@ -67,7 +67,7 @@ function getExampleJson($array, $iteration_num = 0, $iteration_cnt = 5, $symbol 
 			$str .= "\"{$k}\": "				
 				. (($v[0]=='arrays')?"[ ":'') // если массивы, то ставим соответсвующий символ, что бы не путать разработчика
 				. ((intval($iteration_cnt) > 0) ? ("\r\n" . $indent) : '') // отступ не нужен, если заканчиваем итерацию
-				. getExampleAnswer($v[2], $iteration_num, $iteration_cnt - 1) . ((intval($iteration_cnt) > 0) ? $indent : '')  
+				. getExampleJson($v[2], $iteration_num, $iteration_cnt - 1) . ((intval($iteration_cnt) > 0) ? $indent : '')  
 				. (($v[0]=='arrays') ? ("\r\n{$indent}...\r\n{$indent}],\r\n") : ((intval($iteration_cnt) > 0) ? "\r\n" : '') ); //
 				//."\r\n";						
 		} else {
